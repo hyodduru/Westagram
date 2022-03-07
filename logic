@@ -1,0 +1,33 @@
+필수 구현 항목
+1. 로그인 페이지 레이아웃
+2. ID, PW 입력시 로그인 버틴 활성화 기능
+3. 메인 페이지 레이아웃
+4. 댓글 내용 입력 후 Enter press, 혹은 게시 버튼 클릭 시 댓글 추가 기능 
+5. ID, PW valiation(유효성 검사)
+6. 댓글 좋아요, 삭제 기능
+7. 아이디 검색 기능 
+8. nav 프로필 사진 클릭 시 메뉴 박스 생성
+9. 반응형 구현 
+
+instagram 폰트! 
+https://fonts.google.com/specimen/Lobster?preview.text=&preview.text_type=custom
+
+
+디자인
+구현해야할 메인 페이지는 실제 instagram 메인페이지와 거의 비슷한 디자인입니다.
+- 구현할 westagram 디자인: tobe/main.png
+- 레이아웃 참고: tobe/main_layout.png
+
+구현사항
+- 피드는 하나만 만드셔도 됩니다.
+- 댓글 input 창에 엔터치거나 "게시" 누르면 댓글 추가되도록 createElement로 요소 생성해서, input에 입력한 값이 추가 되어야합니다.
+
+
+- 우측 메뉴
+  탐색: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png
+  하트: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png
+  마이페이지: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png
+
+    - 탐색: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png
+  - 하트: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png
+  - 마이페이지: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png
