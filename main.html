@@ -14,7 +14,7 @@
     <title>Westagram</title>
   </head>
   <body>
-    <div class="login-container">
+    <div id="login-container" class="login-container hidden">
       <h1>Westagram</h1>
       <form class="login-form" id="login-form">
         <input
@@ -29,12 +29,15 @@
       <a href="#">비밀번호를 잊으셨나요?</a>
     </div>
 
-    <div class="main-container hidden">
+    <div class="main-container">
       <nav>
-        <a href="#" class="logo">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <span>Instagram</span>
+        <div class="logo">
+          <a href="#" class="logo-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <span>Instagram</span>
+        </div>
+
         <form id="nav-form">
           <input id="nav-input" type="text" placeholder="검색" />
           <i class="fas fa-search"></i>
@@ -60,19 +63,85 @@
       </nav>
 
       <main>
-        <div class="feeds">
+        <div class="article-container">
           <article>
             <div class="article-bar">
-              <img src="img/profile.jpg" alt="profile" />
+              <img class="profile" src="img/profile.jpg" alt="profile" />
               <span class="profile-id">canon_mj</span>
             </div>
-            <img
-              src="https://unsplash.com/photos/VV00FsaXBDA?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
-              alt="feed-img"
+            <div class="article-photo">
+              <img
+                src="https://unsplash.com/photos/VV00FsaXBDA?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+                alt="feed-photo"
+              />
+            </div>
+            <div class="article-btns">
+              <button>
+                <i class="fal fa-heart"></i>
+              </button>
+              <button>
+                <i class="fal fa-comment"></i>
+              </button>
+              <button>
+                <i class="fal fa-external-link"></i>
+              </button>
+            </div>
+            <ul class="comments"></ul>
+            <input
+              type="text"
+              class="comment-input"
+              placeholder="댓글 달기..."
             />
+            <button class="comment-btn">게시</button>
           </article>
         </div>
-        <div class="main-right"></div>
+
+        <div class="main-right">
+          <div class="user">
+            <img class="profile" src="img/profile2.JPG" alt="" />
+            <div class="user-info">
+              <strong>hyodduru</strong>
+              <p>김효정</p>
+            </div>
+          </div>
+
+          <div class="sub-container">
+            <div class="sub-bar">
+              스토리 <a href="#"><strong>모두 보기</strong></a>
+            </div>
+            <ul class="users">
+              <li class="user">
+                <img class="profile" src="img/profile.jpg" />
+                <div class="user-info">
+                  <strong>hyodduru</strong>
+                  <p>김효정</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sub-container">
+            <div class="sub-bar">
+              회원님을 위한 추천 <a href="#"><strong>모두 보기</strong></a>
+            </div>
+            <ul class="users">
+              <li class="user">
+                <img class="profile" src="img/profile.jpg" />
+                <div class="user-info">
+                  <strong>gldis1232123</strong>
+                  <p>ddgoeity님 외 2명이 ....</p>
+                  <a class="follow-link" href="#">팔로우</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <p class="instagram-info">
+            Instagram 정보 · 지원 · 홍보센터 · API · 채용 정보 ·
+            개인정보처리방침 · 약관 · 디렉터리 · 프로필 · 해시태그 · 언어<br /><br />
+            ⓒ 2019 INSTAGRAM
+          </p>
+        </div>
       </main>
     </div>
   </body>
