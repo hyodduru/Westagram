@@ -13,6 +13,10 @@ body {
   height: 100vh;
 }
 
+input:focus {
+  outline: 0;
+}
+
 .login-container {
   width: 350px;
   height: 500px;
@@ -58,4 +62,8 @@ body {
 a {
   text-decoration: none;
   color: #0b3569;
+}
+
+.hidden {
+  display: none;
 }

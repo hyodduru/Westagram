@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="js/main.js"></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/675699ba81.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style/main.css" />
     <title>Westagram</title>
   </head>
@@ -24,6 +29,51 @@
       <a href="#">비밀번호를 잊으셨나요?</a>
     </div>
 
-    <main></main>
+    <div class="main-container hidden">
+      <nav>
+        <a href="#" class="logo">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <span>Instagram</span>
+        <form id="nav-form">
+          <input id="nav-input" type="text" placeholder="검색" />
+          <i class="fas fa-search"></i>
+        </form>
+
+        <ul class="menu-container">
+          <li>
+            <img
+              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
+            />
+          </li>
+          <li>
+            <img
+              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+            />
+          </li>
+          <li>
+            <img
+              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
+            />
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <div class="feeds">
+          <article>
+            <div class="article-bar">
+              <img src="img/profile.jpg" alt="profile" />
+              <span class="profile-id">canon_mj</span>
+            </div>
+            <img
+              src="https://unsplash.com/photos/VV00FsaXBDA?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+              alt="feed-img"
+            />
+          </article>
+        </div>
+        <div class="main-right"></div>
+      </main>
+    </div>
   </body>
 </html>
