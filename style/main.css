@@ -88,17 +88,21 @@ input:focus {
 
 /* nav */
 .main-container {
+  width: 70%;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   padding: 30px 300px;
+  width: 70%;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   border-bottom: 1px solid var(--border-color);
+  background-color: white;
+  z-index: 1;
 }
 
 .logo {
@@ -153,8 +157,111 @@ nav {
   width: 35px;
 }
 
+/* article */
+
+main {
+  display: flex;
+  padding: 9px;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  margin-top: 300px;
+}
+
+.article-container {
+  flex: 2;
+  margin-right: 30px;
+}
+
+article {
+  position: relative;
+  border: 2px solid var(--border-color);
+  border-radius: 3px;
+  height: 1000px;
+  margin: 0;
+}
+
+.article-bar {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 45px 30px;
+}
+
 .profile {
-  width: 3px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.main-right {
+  flex: 1;
+}
+
+.profile-id {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.article-photo {
+  width: 100%;
+  height: 70%;
+}
+
+.article-photo img {
+  width: inherit;
+  height: 100%;
+}
+
+.article-btns {
+  flex: 2;
+  display: flex;
+  height: 50px;
+  padding: 10px;
+  position: relative;
+}
+.article-btns button {
+  border: 0;
+  background-color: transparent;
+  font-size: 30px;
+  color: #414141;
+  margin: 0 2px;
+}
+
+button.absolute {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+}
+
+.article-description {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+article input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+}
+
+article input::placeholder {
+  color: #999999;
+  font-size: 20px;
+}
+
+.comment-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 0;
+  background-color: transparent;
+  font-size: 20px;
+  color: #c4e1fb;
 }
 
 .hidden {
