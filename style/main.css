@@ -237,20 +237,21 @@ button.absolute {
 }
 
 .article-description {
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-size: 20px;
 }
 
-article input {
+.comment-input {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 15px;
   border: 0;
+  font-size: 20px;
 }
 
-article input::placeholder {
+.comment-input::placeholder {
   color: #999999;
   font-size: 20px;
 }
@@ -263,8 +264,23 @@ article input::placeholder {
   background-color: transparent;
   font-size: 20px;
   color: #c4e1fb;
+  cursor: not-allowed;
 }
 
+#comment-form.activate .comment-btn {
+  color: #2c95f6;
+  cursor: pointer;
+}
+
+li.comment {
+  transform: translateX(-15px);
+  margin-bottom: 5px;
+}
+
+.comments {
+  height: 100px;
+  overflow-y: auto;
+}
 /* main-right */
 
 .user {
