@@ -16,6 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #fafafa;
 }
 
 button {
@@ -42,6 +43,7 @@ input:focus {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background-color: white;
 }
 
 .login-container h1 {
@@ -137,6 +139,7 @@ nav {
   width: 300px;
   display: flex;
   font-size: 15px;
+  background-color: #fafafa;
 }
 
 #nav-input::placeholder {
@@ -278,6 +281,7 @@ article {
   border-radius: var(--border-radius);
   height: 900px;
   margin: 0;
+  background-color: white;
 }
 
 .article-bar {
@@ -326,7 +330,6 @@ article {
   height: 50px;
   padding: 10px;
   position: relative;
-  /* margin-bottom: 10px; */
 }
 
 .article-btns button {
@@ -468,9 +471,10 @@ li.comment {
 
 .sub-container {
   border: 2px solid var(--border-color);
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   margin: 20px;
   padding-bottom: 10px;
+  background-color: white;
 }
 
 .sub-bar {

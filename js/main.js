@@ -5,13 +5,12 @@ const idInput = document.getElementById("id");
 const passwordInput = document.getElementById("password");
 const loginBtn = document.getElementById("login-btn");
 
-let id = "hyodduru";
-
 // Main Elements
 const mainContainer = document.querySelector("main");
 const commentInput = document.getElementById("comment-input");
 const commentForm = document.getElementById("comment-form");
 const comments = document.getElementById("comments");
+const userIdEl = document.getElementById("user-id");
 
 // Nav Elements
 const nav = document.querySelector("nav");
@@ -19,6 +18,19 @@ const navForm = document.getElementById("nav-form");
 const navInput = document.getElementById("nav-input");
 const searchResults = document.querySelector(".search-info");
 const profileMenu = document.querySelector(".profile-menu");
+const logoutBtn = document.getElementById("logout-btn");
+
+let id = localStorage.getItem("id") ? localStorage.getItem("id") : "hyodduru";
+
+if (localStorage.getItem("id")) {
+  loginContainer.classList.add("hidden");
+  nav.classList.remove("hidden");
+  mainContainer.classList.remove("hidden");
+} else {
+  nav.classList.remove("hidden");
+  nav.classList.add("hidden");
+  mainContainer.classList.add("hidden");
+}
 
 //user's data
 const userIds = [
@@ -176,7 +188,6 @@ navForm.addEventListener("input", (e) => {
 
 let isValid;
 function checkValidity(id, password) {
-  const engCheck = /^[A-za-z]/g;
   const korCheck = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g;
   const spcCheck = /[~!#$%^&*();_+|<>?:{}]/g;
 
@@ -184,8 +195,7 @@ function checkValidity(id, password) {
 
   if (id === null || id === "") alert("아이디 입력은 필수입니다.");
   else if (spcCheck.test(id)) alert("적합한 아이디 형식이 아닙니다.");
-  else if (!engCheck.test(id) || korCheck.test(id))
-    alert("영문으로 입력해주세요.");
+  else if (korCheck.test(id)) alert("영문으로 입력해주세요.");
   else if (id.length > 0 && id.length < 3) alert("아이디는 3자 이상입니다.");
   else if (id.length > 15) alert("15자 이내로 입력해주세요.");
   else if (id.search(/\s/) !== -1)
@@ -214,11 +224,13 @@ loginForm.addEventListener("submit", (e) => {
   //Clear input
   idInput.value = passwordInput.value = "";
 
-  //Hide Login Form & Render main page
+  //Hide Login Form & Render main page && store user ID
   if (isValid) {
     loginContainer.classList.add("hidden");
     mainContainer.classList.remove("hidden");
     nav.classList.remove("hidden");
+    localStorage.setItem("id", id);
+    userIdEl.innerText = id;
   }
 });
 
@@ -228,3 +240,5 @@ loginForm.addEventListener("input", () => {
   if (idInput.value === "" && passwordInput.value === "")
     loginForm.classList.remove("active");
 });
+
+userIdEl.innerText = id;
