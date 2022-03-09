@@ -94,8 +94,8 @@ input:focus {
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 30px 300px;
-  width: 70%;
   width: 100%;
   position: fixed;
   top: 0;
@@ -474,4 +474,115 @@ li.comment {
   color: #c7c7c7;
   padding: 0 20px;
   font-size: 20px;
+}
+
+@media (max-width: 1600px) {
+  .main-container {
+    width: 85%;
+  }
+  /* nav */
+  nav {
+    padding: 20px 150px;
+  }
+}
+
+@media (max-width: 1300px) {
+  nav {
+    padding: 20px 120px;
+  }
+  main {
+    margin-top: 250px;
+  }
+  /* main-right */
+  .user {
+    padding: 3px 0;
+    margin: 0 10px;
+  }
+  .sub-container {
+    margin: 10px;
+  }
+
+  .user .profile.big {
+    width: 60px;
+    height: 60px;
+  }
+  .user .profile {
+    width: 45px;
+    height: 45px;
+  }
+
+  .user-info strong,
+  .user-info p,
+  .sub-bar,
+  .follow-link,
+  .instagram-info {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1100px) {
+  p {
+    display: none;
+  }
+  #nav-input {
+    width: 200px;
+  }
+  #nav-form i {
+    transform: translateX(-50px);
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 15px 70px;
+  }
+  .logo,
+  .logo span {
+    font-size: 30px;
+  }
+  .menu-container li img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu-container li img {
+    width: 30px;
+    height: 30px;
+  }
+  main {
+    margin: 180px 0 0 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .main-right {
+    display: none;
+  }
+}
+
+@media (max-width: 780px) {
+  nav {
+    padding: 15px 30px;
+  }
+  .main-container {
+    width: 90%;
+  }
+  .menu-container,
+  #nav-form {
+    display: none;
+  }
+  main {
+    margin: 180px 0 0 0;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 570px) {
+  .main-container {
+    width: 95%;
+  }
+  main {
+    padding: 0px;
+  }
 }
