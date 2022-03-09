@@ -10,7 +10,64 @@ const mainContainer = document.querySelector(".main-container");
 const commentInput = document.getElementById("comment-input");
 const commentForm = document.getElementById("comment-form");
 const comments = document.getElementById("comments");
+
 let id = "hyodduru";
+
+// Nav Elements
+const navForm = document.getElementById("nav-form");
+const navInput = document.getElementById("nav-input");
+const searchResults = document.querySelector(".search-info");
+
+//검색창 기능 구현하기
+// 1. input event => class를 통해 검색 마크 오른쪽으로 위치 옮기기 ⭕️
+// 2. nav ul 만들기 class : users, search-info (z-index : 1) ⭕️
+// 4. id의 정보만 담은 배열, result array 만들기 ⭕️
+// 5. id의 정보, 프로필, 아이디, 이름 정보를 담은 객체 map을 이용해서 만들기  pass
+// 6. result에는 해당 객체들의 배열이 들어가고, ul내의 li로 rendering 해준다. 이때 className : user
+
+const userIds = [
+  { id: "kimronghdouw", img: "img/profile.jpg", name: "김로라" },
+  { id: "nonak_c", img: "img/profile.jpg", name: "노낙" },
+  { id: "hapataka_123", img: "img/profile.jpg", name: "해피데이" },
+  { id: "jsw_010203", img: "img/profile.jpg", name: "박지우" },
+  { id: "ilovemaday", img: "img/profile.jpg", name: "" },
+  { id: "innist0_0ry", img: "img/profile.jpg", name: "이네미네" },
+  { id: "gay20n", img: "img/profile.jpg", name: "갸니" },
+  { id: "xoxo_0", img: "img/profile.jpg", name: "박소영" },
+  { id: "jiing_ni", img: "img/profile.jpg", name: "김지은" },
+  { id: "_0.3.2_", img: "img/profile.jpg", name: "박선정" },
+  { id: "dhxo_kwon_", img: "img/profile.jpg", name: "오태하🔥" },
+  { id: "phr1108", img: "img/profile.jpg", name: "화라나" },
+  { id: "2yeoni__", img: "img/profile.jpg", name: "나는 성여니" },
+];
+let resultIds = [];
+
+function filterResult(term) {
+  console.log(term);
+  resultIds = userIds.filter((user) => user.id.includes(term));
+  if (term === "") resultIds = [];
+
+  console.log(resultIds);
+
+  searchResults.innerHTML = `${resultIds
+    .map((user) => {
+      return `<li class="user">
+    <img class="profile" src=${user.img} />
+    <div class="user-info">
+      <strong>${user.id}</strong>
+      <p>${user.name}</p>
+    </div>
+  </li>`;
+    })
+    .join("")}`;
+}
+
+navForm.addEventListener("input", (e) => {
+  navForm.classList.add("activate");
+  if (navInput.value === "") navForm.classList.remove("activate");
+  const term = e.target.value;
+  filterResult(term);
+});
 
 function createComment(comment) {
   const li = document.createElement("li");
@@ -27,11 +84,15 @@ function submitComment(e) {
   commentInput.value = "";
 }
 
-function deleteComment(e) {
+function handleCommentBtn(e) {
   const comment = e.target.closest("li");
 
   if (e.target.classList.contains("fa-times")) {
     comment.remove();
+  }
+
+  if (e.target.classList.contains("fa-heart")) {
+    e.target.classList.toggle("fas");
   }
 }
 
@@ -67,5 +128,12 @@ loginForm.addEventListener("input", () => {
   loginForm.classList.add("active");
 });
 
-//Delete List(comment) as clicking delete-Btn
-comments.addEventListener("click", deleteComment);
+// Handle delete Btn, heart Btn on the comment line
+comments.addEventListener("click", handleCommentBtn);
+
+//Clicking heart on the article-btns bar
+document
+  .querySelector(".article-heart-btn")
+  .addEventListener("click", function () {
+    this.querySelector("i").classList.toggle("fas");
+  });
