@@ -17,6 +17,15 @@ let id = "hyodduru";
 const navForm = document.getElementById("nav-form");
 const navInput = document.getElementById("nav-input");
 const searchResults = document.querySelector(".search-info");
+const profileMenu = document.querySelector(".profile-menu");
+
+document.addEventListener("click", (e) => {
+  const profileIcon = e.target.closest(".profile-icon");
+  if (profileIcon) profileMenu.classList.toggle("open");
+  else {
+    profileMenu.classList.remove("open");
+  }
+});
 
 const userIds = [
   { id: "kimronghdouw", img: "img/profile.jpg", name: "김로라" },
