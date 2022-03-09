@@ -241,4 +241,10 @@ loginForm.addEventListener("input", () => {
     loginForm.classList.remove("active");
 });
 
+//log out when clicking logout button
+logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem("id");
+  location.reload();
+});
+
 userIdEl.innerText = id;
