@@ -14,6 +14,7 @@ const comments = document.getElementById("comments");
 let id = "hyodduru";
 
 // Nav Elements
+const nav = document.querySelector("nav");
 const navForm = document.getElementById("nav-form");
 const navInput = document.getElementById("nav-input");
 const searchResults = document.querySelector(".search-info");
@@ -175,11 +176,14 @@ loginForm.addEventListener("submit", (e) => {
   loginContainer.classList.add("hidden");
   //Render main page
   mainContainer.classList.remove("hidden");
+  nav.classList.remove("hidden");
 });
 
 //activate login-btn
 loginForm.addEventListener("input", () => {
   loginForm.classList.add("active");
+  if (idInput.value === "" && passwordInput.value === "")
+    loginForm.classList.remove("active");
 });
 
 // Handle delete Btn, heart Btn on the comment line

@@ -33,7 +33,8 @@ input:focus {
 .login-container {
   width: 350px;
   height: 500px;
-  border: 2.5px solid #e6e6e6;
+  border: 2px solid #e6e6e6;
+  border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,12 +58,20 @@ input:focus {
 
 .login-form input {
   border: 1px solid #efefef;
-  padding: 10px;
+  border-radius: var(--border-radius);
   font-size: 15px;
+  margin: 3px 10px;
+  height: 35px;
+  padding: 0;
+  text-align: center;
 }
 
 .login-form input::placeholder {
-  color: #a8a8a8;
+  color: #b4b4b4;
+  background-color: #fafafa;
+  line-height: 35px;
+  padding-left: 10px;
+  text-align: left;
 }
 
 .login-btn {
@@ -608,12 +617,7 @@ li.comment {
   main {
     width: 95%;
   }
-
-  .article-container {
-    height: 710px;
-  }
-
-  .article-photo {
-    height: 400px;
+  article {
+    height: 600px;
   }
 }
