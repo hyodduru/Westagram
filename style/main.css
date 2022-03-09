@@ -178,10 +178,60 @@ nav {
 }
 .main-container li {
   margin: 0 15px;
+  position: relative;
+  cursor: pointer;
 }
 
 .main-container li img {
   width: 35px;
+}
+
+.profile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: white;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+}
+
+.profile-menu.open {
+  display: flex;
+}
+
+.profile-menu li {
+  display: flex;
+  padding: 15px 15px;
+  font-size: 17px;
+  width: 100%;
+  margin: 0;
+}
+
+.profile-menu li i {
+  margin-right: 10px;
+}
+
+.profile-menu li:last-child {
+  border-top: 1px solid var(--border-color);
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border: 10x;
+  border-bottom: 15px solid var(--border-color);
+  border-top: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* article */

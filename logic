@@ -5,12 +5,10 @@
 4. 댓글 내용 입력 후 Enter press, 혹은 게시 버튼 클릭 시 댓글 추가 기능 ⭕️
 5. ID, PW valiation(유효성 검사) ⭕️
 6. 댓글 좋아요, 삭제 기능 ⭕️
-7. 아이디 검색 기능 
+7. 아이디 검색 기능 ⭕️
 8. nav 프로필 사진 클릭 시 메뉴 박스 생성
 9. 반응형 구현 
 
-instagram 폰트! 
-https://fonts.google.com/specimen/Lobster?preview.text=&preview.text_type=custom
 
 
 디자인
@@ -28,6 +26,11 @@ https://fonts.google.com/specimen/Lobster?preview.text=&preview.text_type=custom
   하트: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png
   마이페이지: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png
 
-    - 탐색: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png
-  - 하트: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png
-  - 마이페이지: https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png
+
+
+  //검색창 기능 구현하기
+// 1. input event => class를 통해 검색 마크 오른쪽으로 위치 옮기기 ⭕️
+// 2. nav ul 만들기 class : users, search-info (z-index : 1) ⭕️
+// 4. id의 정보만 담은 배열, result array 만들기 ⭕️
+// 5. id의 정보, 프로필, 아이디, 이름 정보를 담은 객체 map을 이용해서 만들기  pass
+// 6. result에는 해당 객체들의 배열이 들어가고, ul내의 li로 rendering 해준다. 이때 className : user ⭕️

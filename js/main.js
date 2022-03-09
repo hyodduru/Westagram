@@ -18,13 +18,6 @@ const navForm = document.getElementById("nav-form");
 const navInput = document.getElementById("nav-input");
 const searchResults = document.querySelector(".search-info");
 
-//검색창 기능 구현하기
-// 1. input event => class를 통해 검색 마크 오른쪽으로 위치 옮기기 ⭕️
-// 2. nav ul 만들기 class : users, search-info (z-index : 1) ⭕️
-// 4. id의 정보만 담은 배열, result array 만들기 ⭕️
-// 5. id의 정보, 프로필, 아이디, 이름 정보를 담은 객체 map을 이용해서 만들기  pass
-// 6. result에는 해당 객체들의 배열이 들어가고, ul내의 li로 rendering 해준다. 이때 className : user
-
 const userIds = [
   { id: "kimronghdouw", img: "img/profile.jpg", name: "김로라" },
   { id: "nonak_c", img: "img/profile.jpg", name: "노낙" },
@@ -43,7 +36,6 @@ const userIds = [
 let resultIds = [];
 
 function filterResult(term) {
-  console.log(term);
   resultIds = userIds.filter((user) => user.id.includes(term));
   if (term === "") resultIds = [];
 
