@@ -6,7 +6,7 @@ const passwordInput = document.getElementById("password");
 const loginBtn = document.getElementById("login-btn");
 
 // Main Elements
-const mainContainer = document.querySelector(".main-container");
+const mainContainer = document.querySelector("main");
 const commentInput = document.getElementById("comment-input");
 const commentForm = document.getElementById("comment-form");
 const comments = document.getElementById("comments");
@@ -28,19 +28,72 @@ document.addEventListener("click", (e) => {
 });
 
 const userIds = [
-  { id: "kimronghdouw", img: "img/profile.jpg", name: "김로라" },
-  { id: "nonak_c", img: "img/profile.jpg", name: "노낙" },
-  { id: "hapataka_123", img: "img/profile.jpg", name: "해피데이" },
-  { id: "jsw_010203", img: "img/profile.jpg", name: "박지우" },
-  { id: "ilovemaday", img: "img/profile.jpg", name: "" },
-  { id: "innist0_0ry", img: "img/profile.jpg", name: "이네미네" },
-  { id: "gay20n", img: "img/profile.jpg", name: "갸니" },
-  { id: "xoxo_0", img: "img/profile.jpg", name: "박소영" },
-  { id: "jiing_ni", img: "img/profile.jpg", name: "김지은" },
-  { id: "_0.3.2_", img: "img/profile.jpg", name: "박선정" },
-  { id: "dhxo_kwon_", img: "img/profile.jpg", name: "오태하🔥" },
-  { id: "phr1108", img: "img/profile.jpg", name: "화라나" },
-  { id: "2yeoni__", img: "img/profile.jpg", name: "나는 성여니" },
+  {
+    id: "wecode",
+    img: "https://image.rocketpunch.com/company/99609/wecode_logo_1590553949.jpg?s=400x400&t=inside",
+    name: "위코드",
+  },
+  {
+    id: "nonak_c",
+    img: "https://images.unsplash.com/photo-1612000529646-f424a2aa1bff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+    name: "노낙",
+  },
+  {
+    id: "hapataka_123",
+    img: "https://images.unsplash.com/photo-1603112579965-e24332cc453a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    name: "해피데이",
+  },
+  {
+    id: "jsw_010203",
+    img: "https://images.unsplash.com/photo-1600657644140-aa5b5e003829?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    name: "박지우",
+  },
+  {
+    id: "ilovemaday",
+    img: "https://images.unsplash.com/photo-1594813967918-3d04c5af997d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    name: "",
+  },
+  {
+    id: "innist0_0ry",
+    img: "https://images.unsplash.com/photo-1605923487072-a672d2189c72?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    name: "이네미네",
+  },
+  {
+    id: "gay20n",
+    img: "https://images.unsplash.com/photo-1491609154219-ffd3ffafd992?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    name: "갸니",
+  },
+  {
+    id: "xoxo_0",
+    img: "https://images.unsplash.com/photo-1527784281695-866fa715d9d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    name: "박소영",
+  },
+  {
+    id: "jiing_ni",
+    img: "https://images.unsplash.com/photo-1592198429453-ded8a9872137?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    name: "김지은",
+  },
+  {
+    id: "_0.3.2_",
+    img: "https://images.unsplash.com/photo-1475823678248-624fc6f85785?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    name: "박선정",
+  },
+  {
+    id: "dhxo_kwon_",
+    img: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXNpYW4lMjBndXl8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60",
+    name: "오태하🔥",
+  },
+  {
+    id: "phr1108",
+    img: "https://images.unsplash.com/photo-1556260756-440a4066245a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    name: "화라나",
+  },
+  {
+    id: "2yeoni__",
+    img: (src =
+      "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGxpZmV8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60"),
+    name: "나는 성여니",
+  },
 ];
 let resultIds = [];
 
@@ -132,9 +185,12 @@ loginForm.addEventListener("input", () => {
 // Handle delete Btn, heart Btn on the comment line
 comments.addEventListener("click", handleCommentBtn);
 
-//Clicking heart on the article-btns bar
+//Clicking heart, bookmark on the article-btns bar
 document
   .querySelector(".article-heart-btn")
   .addEventListener("click", function () {
     this.querySelector("i").classList.toggle("fas");
   });
+document.querySelector(".absolute").addEventListener("click", function () {
+  this.querySelector("i").classList.toggle("fas");
+});

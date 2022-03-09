@@ -3,6 +3,7 @@
 
 :root {
   --border-color: #dbdbdb;
+  --border-radius: 3px;
 }
 
 * {
@@ -87,9 +88,6 @@ input:focus {
 }
 
 /* nav */
-.main-container {
-  width: 70%;
-}
 
 nav {
   display: flex;
@@ -166,6 +164,7 @@ nav {
   border-left: 2px solid var(--border-color);
   border-right: 2px solid var(--border-color);
   margin: 0;
+  padding: 7px;
 }
 
 .search-info .user:last-child {
@@ -176,13 +175,14 @@ nav {
 .menu-container {
   display: flex;
 }
-.main-container li {
+
+.menu-container li {
   margin: 0 15px;
   position: relative;
   cursor: pointer;
 }
 
-.main-container li img {
+.menu-container li img {
   width: 35px;
 }
 
@@ -194,10 +194,10 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
-  background-color: white;
   width: 250px;
-  border-radius: 5px;
   border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: #fff;
 }
 
 .profile-menu.open {
@@ -234,13 +234,15 @@ nav {
   transform: translateX(-50%);
 }
 
+/* main */
+
 /* article */
 
 main {
   display: flex;
   padding: 9px;
   justify-content: space-between;
-  width: 100%;
+  width: 70%;
   height: 100vh;
   margin-top: 300px;
 }
@@ -248,21 +250,30 @@ main {
 .article-container {
   flex: 2;
   margin-right: 30px;
+  transition: all ease 0.4s;
+  height: 100vh;
 }
 
 article {
+  display: flex;
+  flex-direction: column;
   position: relative;
   border: 2px solid var(--border-color);
-  border-radius: 3px;
-  height: 1000px;
+  border-radius: var(--border-radius);
+  height: 900px;
   margin: 0;
 }
 
 .article-bar {
-  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.profile-box {
   display: flex;
   align-items: center;
-  padding: 45px 30px;
 }
 
 .profile {
@@ -272,18 +283,20 @@ article {
   margin-right: 20px;
 }
 
-.main-right {
-  flex: 1;
-}
-
 .profile-id {
   font-weight: 800;
   font-size: 18px;
 }
 
+.article-bar i {
+  cursor: pointer;
+  font-size: 20px;
+}
+
 .article-photo {
   width: 100%;
   height: 70%;
+  flex: 10;
 }
 
 .article-photo img {
@@ -292,13 +305,14 @@ article {
 }
 
 .article-btns {
-  flex: 2;
+  flex: 0.7;
   display: flex;
   height: 50px;
   padding: 10px;
   position: relative;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
+
 .article-btns button {
   border: 0;
   background-color: transparent;
@@ -314,22 +328,28 @@ article {
 button.absolute {
   position: absolute;
   right: 10px;
-  bottom: 0;
+  bottom: 50%;
+  transform: translateY(50%);
 }
 
 .article-description {
+  text-align: left;
   padding: 10px 15px;
   font-size: 20px;
 }
 
-.comment-input {
+#comment-form {
+  flex: 1;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
+}
+.comment-input {
   padding: 15px;
   border: 0;
   font-size: 20px;
+  width: 100%;
 }
 
 .comment-input::placeholder {
@@ -360,8 +380,9 @@ li.comment {
 }
 
 .comments {
-  height: 80px;
+  height: 90px;
   overflow-y: auto;
+  flex: 2;
 }
 
 .heart-btn,
@@ -382,7 +403,8 @@ li.comment {
   color: #ed4957;
 }
 
-.fas.fa-heart {
+.fas.fa-heart,
+.fas.fa-bookmark {
   color: #ed4957;
 }
 
@@ -402,6 +424,9 @@ li.comment {
 
 /* main-right */
 
+.main-right {
+  flex: 1;
+}
 .user {
   display: flex;
   align-items: center;
@@ -477,12 +502,13 @@ li.comment {
 }
 
 @media (max-width: 1600px) {
-  .main-container {
+  main {
     width: 85%;
   }
   /* nav */
   nav {
     padding: 20px 150px;
+    transition: all ease 0.4s;
   }
 }
 
@@ -515,7 +541,12 @@ li.comment {
   .user-info p,
   .sub-bar,
   .follow-link,
-  .instagram-info {
+  .instagram-info,
+  .comment-input,
+  .comment-input::placeholder,
+  .comment-btn,
+  .comment,
+  .user-info {
     font-size: 16px;
   }
 }
@@ -545,14 +576,14 @@ li.comment {
     height: 30px;
   }
 
-  .menu-container li img {
-    width: 30px;
-    height: 30px;
-  }
   main {
-    margin: 180px 0 0 0;
+    margin-top: 180px;
     justify-content: center;
-    width: 100%;
+    text-align: center;
+  }
+
+  .article-container {
+    margin-right: 0;
   }
 
   .main-right {
@@ -564,25 +595,25 @@ li.comment {
   nav {
     padding: 15px 30px;
   }
-  .main-container {
-    width: 90%;
-  }
-  .menu-container,
+
   #nav-form {
     display: none;
   }
   main {
-    margin: 180px 0 0 0;
-    justify-content: center;
-    width: 100%;
+    width: 90%;
   }
 }
 
 @media (max-width: 570px) {
-  .main-container {
+  main {
     width: 95%;
   }
-  main {
-    padding: 0px;
+
+  .article-container {
+    height: 710px;
+  }
+
+  .article-photo {
+    height: 400px;
   }
 }
