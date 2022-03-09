@@ -5,13 +5,13 @@ const idInput = document.getElementById("id");
 const passwordInput = document.getElementById("password");
 const loginBtn = document.getElementById("login-btn");
 
+let id = "hyodduru";
+
 // Main Elements
 const mainContainer = document.querySelector("main");
 const commentInput = document.getElementById("comment-input");
 const commentForm = document.getElementById("comment-form");
 const comments = document.getElementById("comments");
-
-let id = "hyodduru";
 
 // Nav Elements
 const nav = document.querySelector("nav");
@@ -20,14 +20,7 @@ const navInput = document.getElementById("nav-input");
 const searchResults = document.querySelector(".search-info");
 const profileMenu = document.querySelector(".profile-menu");
 
-document.addEventListener("click", (e) => {
-  const profileIcon = e.target.closest(".profile-icon");
-  if (profileIcon) profileMenu.classList.toggle("open");
-  else {
-    profileMenu.classList.remove("open");
-  }
-});
-
+//user's data
 const userIds = [
   {
     id: "wecode",
@@ -98,11 +91,10 @@ const userIds = [
 ];
 let resultIds = [];
 
+//user search function
 function filterResult(term) {
   resultIds = userIds.filter((user) => user.id.includes(term));
   if (term === "") resultIds = [];
-
-  console.log(resultIds);
 
   searchResults.innerHTML = `${resultIds
     .map((user) => {
@@ -117,13 +109,7 @@ function filterResult(term) {
     .join("")}`;
 }
 
-navForm.addEventListener("input", (e) => {
-  navForm.classList.add("activate");
-  if (navInput.value === "") navForm.classList.remove("activate");
-  const term = e.target.value;
-  filterResult(term);
-});
-
+// article - comment part
 function createComment(comment) {
   const li = document.createElement("li");
   li.innerHTML = `<strong>${id}</strong> ${comment}  <button class ="heart-btn" ><i class ="far fa-heart"></i></button>  <button class="delete-btn"  ><i class="fas fa-times"></i></button>`;
@@ -151,39 +137,11 @@ function handleCommentBtn(e) {
   }
 }
 
+// comment submit event
 commentForm.addEventListener("submit", submitComment);
 commentForm.addEventListener("input", (e) => {
   commentForm.classList.add("activate");
   if (commentInput.value === "") commentForm.classList.remove("activate");
-});
-
-// Login handling
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (id.length === 0 || password.length === 0) return;
-
-  id = idInput.value;
-  password = passwordInput.value;
-
-  //Password validation
-  if (password.length < 5) {
-    alert("Password should be at least 5 characters.");
-    return;
-  }
-  //Clear input
-  idInput.value = passwordInput.value = "";
-  //Hide Login Form
-  loginContainer.classList.add("hidden");
-  //Render main page
-  mainContainer.classList.remove("hidden");
-  nav.classList.remove("hidden");
-});
-
-//activate login-btn
-loginForm.addEventListener("input", () => {
-  loginForm.classList.add("active");
-  if (idInput.value === "" && passwordInput.value === "")
-    loginForm.classList.remove("active");
 });
 
 // Handle delete Btn, heart Btn on the comment line
@@ -197,4 +155,76 @@ document
   });
 document.querySelector(".absolute").addEventListener("click", function () {
   this.querySelector("i").classList.toggle("fas");
+});
+
+// Show nav - profile menu when clicking the profile icon
+document.addEventListener("click", (e) => {
+  const profileIcon = e.target.closest(".profile-icon");
+  if (profileIcon) profileMenu.classList.toggle("open");
+  else {
+    profileMenu.classList.remove("open");
+  }
+});
+
+// Search user's id & activate search button
+navForm.addEventListener("input", (e) => {
+  navForm.classList.add("activate");
+  if (navInput.value === "") navForm.classList.remove("activate");
+  const term = e.target.value;
+  filterResult(term);
+});
+
+let isValid;
+function checkValidity(id, password) {
+  const engCheck = /^[A-za-z]/g;
+  const korCheck = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g;
+  const spcCheck = /[~!#$%^&*();_+|<>?:{}]/g;
+
+  isValid = false;
+
+  if (id === null || id === "") alert("아이디 입력은 필수입니다.");
+  else if (spcCheck.test(id)) alert("적합한 아이디 형식이 아닙니다.");
+  else if (!engCheck.test(id) || korCheck.test(id))
+    alert("영문으로 입력해주세요.");
+  else if (id.length > 0 && id.length < 3) alert("아이디는 3자 이상입니다.");
+  else if (id.length > 15) alert("15자 이내로 입력해주세요.");
+  else if (id.search(/\s/) !== -1)
+    alert("아이디는 빈 칸을 포함 할 수 없습니다.");
+  else if (password === null || password === "")
+    alert("비밀번호 입력은 필수입니다.");
+  else if (password.length > 0 && password.length < 5)
+    alert("비밀번호는 5자 이상입니다.");
+  else if (password.length > 20) alert("비밀번호는 20자 미만입니다.");
+  else isValid = true;
+
+  return isValid;
+}
+
+// Login handling
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (id.length === 0 || password.length === 0) return;
+
+  id = idInput.value;
+  password = passwordInput.value;
+
+  checkValidity(id, password);
+
+  console.log(id, password);
+  //Clear input
+  idInput.value = passwordInput.value = "";
+
+  //Hide Login Form & Render main page
+  if (isValid) {
+    loginContainer.classList.add("hidden");
+    mainContainer.classList.remove("hidden");
+    nav.classList.remove("hidden");
+  }
+});
+
+//activate login-btn
+loginForm.addEventListener("input", () => {
+  loginForm.classList.add("active");
+  if (idInput.value === "" && passwordInput.value === "")
+    loginForm.classList.remove("active");
 });

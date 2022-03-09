@@ -30,6 +30,8 @@ input:focus {
   outline: 0;
 }
 
+/* login */
+
 .login-container {
   width: 350px;
   height: 500px;
@@ -219,6 +221,11 @@ nav {
   font-size: 17px;
   width: 100%;
   margin: 0;
+}
+
+.profile-menu li:hover,
+.search-info .user:hover {
+  background-color: var(--border-color);
 }
 
 .profile-menu li i {
