@@ -3,16 +3,16 @@
  <br>
 
 :: 구현 목표  <br>
-[Mission1] 로그인 페이지 레이아웃 <br>
-[Mission2] id, pw 입력 시 로그인 버튼 활성화 기능 <br>
-[Mission3] 메인 페이지 레이아웃 <br>
-[Mission4] 댓글 내용 입력 후 Enter press, 혹은 게시 버튼 클릭 시 댓글 추가 기능 <br>
-[Mission5] ID, PW validation <br>
-[Mission6] 댓글 좋아요 / 삭제 기능 <br>
-[Mission7] 아이디 검색 기능 <br>
-[Mission8] nav 프로필 사진 클릭 시 메뉴 박스 생성 <br>
-[Mission9] 반응형 구현 <br>
-[추가기능] id local storage에 저장 및 로그아웃 기능 <br>
+1. 로그인 페이지 레이아웃 <br>
+2. id, pw 입력 시 로그인 버튼 활성화 기능 <br>
+3. 메인 페이지 레이아웃 <br>
+4.댓글 내용 입력 후 Enter press, 혹은 게시 버튼 클릭 시 댓글 추가 기능 <br>
+5. ID, PW validation <br>
+6. 댓글 좋아요 / 삭제 기능 <br>
+7. 아이디 검색 기능 <br>
+8. nav 프로필 사진 클릭 시 메뉴 박스 생성 <br>
+9. 반응형 구현 <br>
+10. id local storage에 저장 및 로그아웃 기능 <br>
  <br>
 :: 구현 사항 <br>
 로그인 페이지 개발 <br>
